@@ -1,0 +1,40 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_self
+ */
+
+@import 'plugins/char_counter.min.css';
+@import 'plugins/code_view.min.css';
+@import 'plugins/colors.min.css';
+@import 'plugins/emoticons.min.css';
+@import 'plugins/file.min.css';
+@import 'plugins/fullscreen.min.css';
+@import 'plugins/help.min.css';
+@import 'plugins/image_manager.min.css';
+@import 'plugins/image.min.css';
+@import 'plugins/line_breaker.min.css';
+@import 'plugins/quick_insert.min.css';
+@import 'plugins/special_characters.min.css';
+@import 'plugins/table.min.css';
+@import 'plugins/video.min.css';
+
+@import 'third_party/embedly.min.css';
+@import 'third_party/spell_checker.min.css';
+@import "froala_editor.min";
+@import "froala_style.min";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'partials/variables';
+@import 'main';

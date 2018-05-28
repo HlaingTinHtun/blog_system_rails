@@ -1,0 +1,42 @@
+<!-- comments -->
+<div class="comments">
+  <h2 class="page-header"><%= @post.comments.length %> Comment(s)</h2>
+  <% @post.comments.each do |comment| %>
+  <div class="comment">
+    <div class="row">
+      <div class="col-md-2">
+        <%= image_tag('user.jpg')%>
+      </div>
+      <div class="col-md-10">
+        <div class="well">
+          <h4><%= comment.name %> at <span><%= comment.created_at.to_time.strftime('%B %e at %l:%M %p')%></span></h4>
+          <%= comment.body %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+
+  <div class="well add-comments">
+    <h2 class="page-header">Add Comment</h2>
+    <%= form_for([@post, @post.comments.build]) do |f| %>
+      <p>
+        <%= f.label :name %><br>
+        <%= f.text_field :name,class:'form-control' %>
+      </p>
+
+      <p>
+        <%= f.label :email %><br>
+        <%= f.text_field :email,class:'form-control' %>
+      </p>
+
+      <p>
+        <%= f.label :body %><br>
+        <%= f.text_area :body,class:'form-control' %>
+      </p>
+      <p>
+        <%= f.submit "Submit", class:'btn btn-primary' %>
+      </p>
+    <%end%>
+  </div>
+</div>

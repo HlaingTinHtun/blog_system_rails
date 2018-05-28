@@ -1,0 +1,162 @@
+body{
+  font-family: 'Arial',sans-serif;
+  background:$background-color;
+  line-height: 1.6em;
+}
+
+.navbar{
+  overflow: auto;
+  min-height: 100px;
+  background: $primary-color;
+  color: white;
+  font-size: 18px;
+  border-radius: 0;
+}
+
+.navbar h1{
+  margin: 10px 0 0 0;
+  padding: 0;
+}
+
+.navbar a {
+  color: #fff !important;
+}
+
+.navbar a:hover{
+  color: $primary-btn-color !important;
+}
+
+.navbar a.navbar-barnd:hover{
+  color: #fff !important;
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+  background-color: $primary-color;
+}
+
+.navbar ul{
+  margin-top: 22px;
+}
+
+.search-form{
+  margin-top: 30px;
+}
+
+.search-form input[type='text']{
+  border-radius: 0;
+  height: 38px;
+}
+
+.search-form .form-group{
+  display: inline-block;
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+.search-form .btn{
+  border: 0;
+  height: 38px;
+  margin-top: 0;
+  border-radius: 0;
+  margin-left: -5px;
+}
+
+.search-form .form-control{
+  background: $primary-color;
+  border:1px solid grey;
+
+}
+
+.btn-primary{
+  background-color: $primary-btn-color;
+  border-color: $primary-btn-color;
+}
+
+.btn:hover{
+  background: #ccc;
+  border-color: #ccc;
+}
+
+.post img{
+  width: 100%;
+  height: 200px;
+}
+
+.post{
+  border: 1px #ccc solid;
+  background: $primary-color;
+  margin-bottom: 30px;
+  color: #e4dddd;
+}
+
+.post-content{
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.post h3{
+  margin: 0;
+  padding: 0;
+}
+
+small{
+  background: #4d545a;
+  color: #fff;
+  display: block;
+  margin: 10px 0;
+  padding: 5px 10px;
+}
+
+.post .btn{
+  display: block;
+  margin-top: 20px;
+}
+footer{
+  background: $primary-color;
+  color: #fff;
+  text-align: center;
+  height: 60px;
+  padding-top: 20px;
+  margin-top: 30px;
+}
+
+.leftside_bar{
+    background: #4d545a;
+    color: #d1d0d4 !important;
+    border: 1px solid #848484;
+}
+
+.leftside_bar:hover{
+  background-color: $primary-color !important;
+}
+
+.well{
+  background-color: $background-color;
+  color: white;
+}
+
+form .form-control{
+  background-color: $background-color !important;
+  color: white;
+}
+
+.active{
+  color: red;
+  font-size: 20px;
+  font-family: cursive;
+}
+
+.btn-success{
+  background-color: $second-btn-color;
+  border-color: $second-btn-color;
+}
+.fr-counter{
+  display: none;
+}
+
+.page-header{
+  color: white;
+}
+
+.comment img{
+  width: 100%;
+}

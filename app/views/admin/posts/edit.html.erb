@@ -1,0 +1,54 @@
+<script>
+  $(function() {
+    $('textarea#froala-editor').froalaEditor()
+  });
+</script>
+<h2>Edit Post</h2>
+
+<%= form_for [:admin, @post] do |f| %>
+  <!-- check for errors -->
+  <% if @post.errors.any? %>
+    <% @post.errors.full_messages.each do |msg| %>
+      <!-- show errors -->
+      <div class="alert alert-danger">
+        <%= msg %>
+      </div>
+    <%end%>
+  <%end%>
+  <div class="form-group">
+    <%= f.label :title %><br/>
+    <%= f.text_field :title, class:'form-control' %><br/>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :category %><br/>
+    <%= f.select :category_id, Category.all.collect{|x| [x.name, x.id]}, {:include_blank => 'Select One'}, class:"form-control" %><br/>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :author %><br/>
+    <%= f.select :user_id, User.all.collect{|x| [x.name, x.id]}, {:include_blank => 'Select One'}, class:"form-control" %><br/>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :image %><br/>
+    <%= f.file_field :image%><br/>
+  </div>
+
+  <% if @post.image.exists? %>
+    <%= image_tag @post.image.url, width: '100%' %>
+  <%end%>
+
+  <div class="form-group">
+    <%= f.label :tags %><br/>
+    <%= f.text_area :tags, class:'form-control' %><br/>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :body %><br/>
+    <%= f.text_area :body, class:'form-control',id:'froala-editor'%><br/>
+  </div>
+
+  <%= f.submit "Submit", class:'btn btn-primary' %>
+  <%= link_to "Cancel", admin_posts_path, class:'btn btn-default' %>
+<%end%>

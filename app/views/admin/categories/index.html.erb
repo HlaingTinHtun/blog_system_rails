@@ -1,0 +1,19 @@
+<h2 class="page-header">Manage Categories <%= link_to "Create New", new_admin_category_path, class:'btn btn-success pull-right'%></h2>
+<table class="table table-stripped">
+  <tr>
+    <th>Category Title</th>
+    <th>Created Date</th>
+    <th>Action</th>
+  </tr>
+  <% @categories.each do |category| %>
+    <tr>
+      <td><%= category.name %></td>
+      <td><%= category.created_at.to_time.strftime('%B %e at %l:%M %p') %></td>
+      <td>
+        <%= link_to "Edit", edit_admin_category_path(category), class:'btn btn-success'%>
+        <%= link_to "Delete", admin_category_path(category), class:'btn btn-danger', method: :delete, data: {confirm: 'Are you sure'}%>
+      </td>
+    </tr>
+  <%end%>
+</table>
+<%= will_paginate @categories %>

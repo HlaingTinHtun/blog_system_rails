@@ -1,0 +1,35 @@
+<h2>Add New User</h2>
+
+<%= form_for [:admin, @user] do |f| %>
+  <!-- check for errors -->
+  <% if @user.errors.any? %>
+    <% @user.errors.full_messages.each do |msg| %>
+      <!-- show errors -->
+      <div class="alert alert-danger">
+        <%= msg %>
+      </div>
+    <%end%>
+  <%end%>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class:'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :email %>
+    <%= f.text_field :email, class:'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password %>
+    <%= f.password_field :password, class:'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, class:'form-control' %>
+  </div>
+
+  <%= f.submit "Submit", class:'btn btn-primary' %>
+  <%= link_to "Cancel", admin_users_path, class:'btn btn-default' %>
+<%end%>
